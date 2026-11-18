@@ -1,0 +1,289 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ISBAT University | Student Registration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        header, footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        nav {
+            background-color: #ddd;
+            text-align: center;
+            padding: 12px;
+        }
+
+        nav a {
+            margin: 15px;
+            text-decoration: none;
+            color: #003366;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 700px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+        }
+
+        form {
+            width: 100%;
+        }
+
+        fieldset {
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #888;
+        }
+
+        legend {
+            font-weight: bold;
+            color: #003366;
+        }
+
+        label {
+            display: block;
+            margin-top: 12px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 9px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: auto;
+        }
+
+        .choice {
+            display: inline-block;
+            margin-right: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px 5px;
+            cursor: pointer;
+        }
+
+        .submit {
+            background-color: #003366;
+            color: white;
+            border: none;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header>
+        <h1>ISBAT UNIVERSITY</h1>
+        <p>Online Student Registration Portal</p>
+    </header>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#programmes">Programmes</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main id="home">
+
+        <h2>New Student Registration Form</h2>
+
+        <p>Please complete all the required fields below.</p>
+
+        <form action="#" method="post">
+
+            <!-- PERSONAL DETAILS -->
+
+            <fieldset>
+
+                <legend>Personal Details</legend>
+
+                <label for="fullname">Full Name:</label>
+                <input type="text" id="fullname"
+                       name="fullname" required>
+
+                <label for="studentid">Student ID:</label>
+                <input type="text" id="studentid"
+                       name="studentid"
+                       pattern="[A-Z]{3}[0-9]{4}"
+                       title="Enter three uppercase letters followed by four digits, e.g. ISB1234"
+                       required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email"
+                       name="email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone"
+                       name="phone"
+                       pattern="07[0-9]{8}"
+                       placeholder="07XXXXXXXX"
+                       title="Enter a phone number beginning with 07 followed by eight digits"
+                       required>
+
+                <label>Gender:</label>
+
+                <div class="choice">
+                    <input type="radio" id="male"
+                           name="gender" value="Male" required>
+                    <label for="male" class="choice">Male</label>
+                </div>
+
+                <div class="choice">
+                    <input type="radio" id="female"
+                           name="gender" value="Female">
+                    <label for="female" class="choice">Female</label>
+                </div>
+
+                <label for="nationality">Nationality:</label>
+
+                <select id="nationality" name="nationality" required>
+                    <option value="">Select Nationality</option>
+                    <option value="Uganda">Uganda</option>
+                    <option value="Kenya">Kenya</option>
+                    <option value="Tanzania">Tanzania</option>
+                    <option value="Rwanda">Rwanda</option>
+                    <option value="South Sudan">South Sudan</option>
+                </select>
+
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob"
+                       name="dob" required>
+
+            </fieldset>
+
+            <!-- PROGRAMME DETAILS -->
+
+            <fieldset id="programmes">
+
+                <legend>Programme Details</legend>
+
+                <label for="programme">Programme of Study:</label>
+
+                <select id="programme" name="programme" required>
+
+                    <option value="">Select Programme</option>
+                    <option value="BIT">
+                        Bachelor of Information Technology
+                    </option>
+
+                    <option value="BBA">
+                        Bachelor of Business Administration
+                    </option>
+
+                    <option value="BCS">
+                        Bachelor of Computer Science
+                    </option>
+
+                    <option value="BSE">
+                        Bachelor of Software Engineering
+                    </option>
+
+                </select>
+
+            </fieldset>
+
+            <!-- COURSE UNITS -->
+
+            <fieldset>
+
+                <legend>Course Units - First Semester</legend>
+
+                <p>Select the course units you wish to register for:</p>
+
+                <input type="checkbox" id="html"
+                       name="units[]" value="HTML">
+
+                <label for="html" class="choice">
+                    Web Design and Development
+                </label>
+
+                <br>
+
+                <input type="checkbox" id="programming"
+                       name="units[]" value="Programming">
+
+                <label for="programming" class="choice">
+                    Programming Fundamentals
+                </label>
+
+                <br>
+
+                <input type="checkbox" id="database"
+                       name="units[]" value="Database">
+
+                <label for="database" class="choice">
+                    Database Management Systems
+                </label>
+
+                <br>
+
+                <input type="checkbox" id="networking"
+                       name="units[]" value="Networking">
+
+                <label for="networking" class="choice">
+                    Computer Networks
+                </label>
+
+                <br>
+
+                <input type="checkbox" id="mathematics"
+                       name="units[]" value="Mathematics">
+
+                <label for="mathematics" class="choice">
+                    Mathematics for Computing
+                </label>
+
+            </fieldset>
+
+            <!-- FORM BUTTONS -->
+
+            <button type="submit" class="submit">
+                Submit Registration
+            </button>
+
+            <button type="reset">
+                Reset Form
+            </button>
+
+        </form>
+
+    </main>
+
+    <footer id="contact">
+
+        <p>ISBAT University - Student Registration Portal</p>
+
+        <p>
+            &copy; 2026 ISBAT University.
+            Registration Number: 012250246
+        </p>
+
+    </footer>
+
+</body>
+</html>
